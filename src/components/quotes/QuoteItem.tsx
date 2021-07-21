@@ -1,16 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
+import { IQuote } from '../../interfaces';
 import classes from './QuoteItem.module.css';
 
-const QuoteItem = ({
-  id,
-  text,
-  author,
-}: {
-  id: string;
-  text: string;
-  author: string;
-}): JSX.Element => (
+const QuoteItem = ({ id, text, author }: IQuote): JSX.Element => (
   <li className={classes.item}>
     <figure>
       <blockquote>
@@ -18,7 +12,9 @@ const QuoteItem = ({
       </blockquote>
       <figcaption>{author}</figcaption>
     </figure>
-    <a className="btn">View Fullscreen</a>
+    <Link to={`/quotes/${id}`} className="btn">
+      View Fullscreen
+    </Link>
   </li>
 );
 
