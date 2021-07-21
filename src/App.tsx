@@ -1,8 +1,17 @@
 import React, { FC } from 'react';
+import { Route } from 'react-router-dom';
+
+import Products from './pages/Products';
+import Welcome from './pages/Welcome';
 
 const App: FC = () => (
   <div>
-    <h2>Let&apos;s get started!</h2>
+    <Route path="/welcome">
+      <Welcome />
+    </Route>
+    <Route path="/products">
+      <Products />
+    </Route>
   </div>
 );
 
