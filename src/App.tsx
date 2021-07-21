@@ -8,12 +8,14 @@ import Welcome from './pages/Welcome';
 const App: FC = () => (
   <>
     <MainHeader />
-    <Route path="/welcome">
-      <Welcome />
-    </Route>
-    <Route path="/products">
-      <Products />
-    </Route>
+    <main>
+      <Route path="/welcome">
+        <Welcome />
+      </Route>
+      <Route path="/products">
+        <Products />
+      </Route>
+    </main>
   </>
 );
 
