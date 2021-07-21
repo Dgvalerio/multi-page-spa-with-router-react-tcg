@@ -15,7 +15,7 @@ const QuoteForm = ({
   const authorInputRef = useRef<HTMLInputElement>(null);
   const textInputRef = useRef<HTMLTextAreaElement>(null);
 
-  function submitFormHandler(event: FormEvent) {
+  const submitFormHandler = (event: FormEvent) => {
     event.preventDefault();
 
     const enteredAuthor = authorInputRef.current?.value || '';
@@ -24,7 +24,7 @@ const QuoteForm = ({
     // optional: Could validate here
 
     onAddQuote({ author: enteredAuthor, text: enteredText, id: '?' });
-  }
+  };
 
   return (
     <Card>
