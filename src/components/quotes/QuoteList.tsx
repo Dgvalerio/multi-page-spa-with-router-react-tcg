@@ -1,13 +1,10 @@
 import React from 'react';
 
+import { IQuote } from '../../interfaces';
 import QuoteItem from './QuoteItem';
 import classes from './QuoteList.module.css';
 
-const QuoteList = ({
-  quotes,
-}: {
-  quotes: { id: string; author: string; text: string }[];
-}): JSX.Element => (
+const QuoteList = ({ quotes }: { quotes: IQuote[] }): JSX.Element => (
   <>
     <ul className={classes.list}>
       {quotes.map((quote) => (

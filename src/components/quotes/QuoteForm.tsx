@@ -1,5 +1,6 @@
 import React, { FormEvent, useRef } from 'react';
 
+import { IQuote } from '../../interfaces';
 import Card from '../UI/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import classes from './QuoteForm.module.css';
@@ -8,7 +9,7 @@ const QuoteForm = ({
   onAddQuote,
   isLoading,
 }: {
-  onAddQuote: ({ author, text }: { author: string; text: string }) => void;
+  onAddQuote: ({ author, text }: IQuote) => void;
   isLoading: boolean;
 }): JSX.Element => {
   const authorInputRef = useRef<HTMLInputElement>(null);
@@ -22,7 +23,7 @@ const QuoteForm = ({
 
     // optional: Could validate here
 
-    onAddQuote({ author: enteredAuthor, text: enteredText });
+    onAddQuote({ author: enteredAuthor, text: enteredText, id: '?' });
   }
 
   return (

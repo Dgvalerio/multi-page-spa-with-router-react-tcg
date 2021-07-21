@@ -1,5 +1,14 @@
 import React, { FC } from 'react';
 
-const NewQuote: FC = () => <h1>New Quote Page</h1>;
+import QuoteForm from '../components/quotes/QuoteForm';
+import { IQuote } from '../interfaces';
+
+const NewQuote: FC = () => {
+  const addQuoteHandler = (quoteData: IQuote) => {
+    console.log(quoteData);
+  };
+
+  return <QuoteForm onAddQuote={addQuoteHandler} isLoading={false} />;
+};
 
 export default NewQuote;
