@@ -22,7 +22,10 @@ const QuoteList = ({ quotes }: { quotes: IQuote[] }): JSX.Element => {
   const sortedQuotes = sortQuotes(quotes, isSortingAscending);
 
   const changeSortingHandler = () =>
-    history.push(`/quotes?sort=${isSortingAscending ? 'desc' : 'asc'}`);
+    history.push({
+      pathname: location.pathname,
+      search: `?sort=${isSortingAscending ? 'desc' : 'asc'}`,
+    });
 
   return (
     <>
