@@ -1,7 +1,6 @@
 import React, { FormEvent, useRef, useState } from 'react';
 import { Prompt } from 'react-router-dom';
 
-import { IQuote } from '../../interfaces';
 import Card from '../UI/Card';
 import LoadingSpinner from '../UI/LoadingSpinner';
 import classes from './QuoteForm.module.css';
@@ -10,7 +9,7 @@ const QuoteForm = ({
   onAddQuote,
   isLoading,
 }: {
-  onAddQuote: ({ author, text }: IQuote) => void;
+  onAddQuote: ({ author, text }: { author: string; text: string }) => void;
   isLoading: boolean;
 }): JSX.Element => {
   const [isEntered, setIsEntered] = useState(false);
@@ -26,7 +25,7 @@ const QuoteForm = ({
 
     // optional: Could validate here
 
-    onAddQuote({ author: enteredAuthor, text: enteredText, id: '?' });
+    onAddQuote({ author: enteredAuthor, text: enteredText });
   };
 
   const finishEnteringHandler = () => setIsEntered(false);

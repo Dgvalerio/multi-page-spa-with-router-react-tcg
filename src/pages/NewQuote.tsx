@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 
 import QuoteForm from '../components/quotes/QuoteForm';
 import useHttp from '../hooks/use-http';
-import { IQuote } from '../interfaces';
 import { addQuote } from '../lib/api';
 
 const NewQuote: FC = () => {
@@ -16,7 +15,7 @@ const NewQuote: FC = () => {
     }
   }, [history, status]);
 
-  const addQuoteHandler = (quoteData: IQuote) => {
+  const addQuoteHandler = (quoteData: { author: string; text: string }) => {
     sendRequest(quoteData);
 
     history.push('/quotes');
